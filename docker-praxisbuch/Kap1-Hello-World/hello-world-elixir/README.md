@@ -17,5 +17,3 @@ To run the docker image, enter:
 docker run hello-world-elixir
 ```
 
-This commands runs the docker image and maps the port 8080 of the host machine
-to the port 8080 of the container system.
