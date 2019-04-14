@@ -1,8 +1,26 @@
 # Learning Docker
 
+The Arch Linux Wiki[1] says:
 ```
 Docker is a utility to pack, ship and run any application as a lightweight container.
 ```
+
+The docker documentation[2] describes docker as:
+
+```
+Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. 
+The use of Linux containers to deploy applications is called containerization. 
+Containers are not new, but their use for easily deploying applications is.
+```
+
+Containerization is increasingly popular because containers are [2]:
+
+ * Flexible: Even the most complex applications can be containerized.
+ * Lightweight: Containers leverage and share the host kernel.
+ * Interchangeable: You can deploy updates and upgrades on-the-fly.
+ * Portable: You can build locally, deploy to the cloud, and run anywhere.
+ * Scalable: You can increase and automatically distribute container replicas.
+ * Stackable: You can stack services vertically and on-the-fly.
 
 ## Installation on Arch Linux
 
@@ -133,8 +151,8 @@ Run 'docker COMMAND --help' for more information on a command.
 
 ## Online Resources
 
- * [Arch Linux Wiki - Docker](https://wiki.archlinux.org/index.php/docker)
- * [Docker Documentation](https://wiki.archlinux.org/index.php/docker)
+ * [1] [Arch Linux Wiki - Docker](https://wiki.archlinux.org/index.php/docker)
+ * [2] [Docker Documentation](https://wiki.archlinux.org/index.php/docker)
 
 ## Book Resources
 
