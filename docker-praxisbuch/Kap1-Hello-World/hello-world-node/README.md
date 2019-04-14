@@ -3,7 +3,7 @@
 ## Build
 
 To create a docker image based on the `Dockerfile` run the command below.
-The command will create a tagged docker image `hello-world-app`.
+The command will create a tagged docker image `hello-world-node`.
 
 ```
 docker build -t hello-world-node .
