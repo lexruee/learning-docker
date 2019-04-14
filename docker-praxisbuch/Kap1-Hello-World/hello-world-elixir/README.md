@@ -1,4 +1,4 @@
-# PHP7/Apache Hello World
+# Elixir Hello World
 
 ## Build
 
