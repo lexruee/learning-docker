@@ -11,6 +11,7 @@ http.createServer((reg, res) => {
             <meta charset="utf-8" />
         </head>
         <body>
+            <h1>Hello World Node!</h1>
             <ul>
                 <li>Server time: ${dateTime} </li>
                 <li>Server load: ${load[0]} </li>
