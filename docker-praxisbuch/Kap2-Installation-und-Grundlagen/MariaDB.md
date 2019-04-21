@@ -1,6 +1,6 @@
 # Maria DB
 
-## Beispel  1
+## Beispel 1 - Grundlagen
 
 1) Container erstellen
 
@@ -66,3 +66,51 @@ docker rm mariadb-test1
 docker prune volumes
 ```
 
+## Beispiel 2 - Mit einem Volume
+
+Host Verzeichnis erstellen für das Volume:
+
+``` 
+mkdir -p /home/xander/docker/varlibmysql
+```
+
+Container erstellen und starten:
+
+```
+docker run -d --name mariadb-test2 \
+    -e MYSQL_ROOT_PASSWORD=geheim \
+    -v /home/xander/docker/varlibmysql:/var/lib/mysql \
+    mariadb
+```
+
+In den Container springen und die mysql shell starten:
+
+```
+docker exec -it mariadb-test2 mysql -u root -p
+```
+
+Eine Test-Datenbank erstellen:
+
+``` 
+CREATE DATABASE db;
+```
+
+
+Den Container stoppen:
+
+```
+docker stop mariadb-test2
+```
+
+
+Den Container wiederstarten und in die mysql shell springen:
+
+``` 
+docker exec -it mariadb-test2 mysql -u root -p
+```
+
+Überprüfen ob die Test-Datenbank immer noch da ist:
+
+``` 
+show databases;
+```
