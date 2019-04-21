@@ -27,7 +27,7 @@ Containerization is increasingly popular because containers are [2]:
 Install it with `pacman`:
 
 ```
-sudo pacman -S docker
+sudo pacman -S docker docker-compose
 ```
 
 Enable and start the docker service:
