@@ -198,3 +198,15 @@ docker run -d --name wp-test1 \
     -e WORDPRESS_DB_HOST=mariadb-test5 \
     wordpress
 ```
+
+
+Wordpress installieren und danach die DB anschauen:
+
+``` 
+docker exec -it mariadb-test5 mysql -u root -p
+use wordpress;
+show tables;
+exit
+```
+
+
