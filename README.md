@@ -52,6 +52,7 @@ docker info
 
 Depending on your system, you will need to fix your DNS config,
 so the docker registry is accessible.
+Quck fix: Edit your /etc/resolv.conf and add `nameserver 8.8.8.8`
 
 
 ## Installation on Ubuntu 18.04 Server
