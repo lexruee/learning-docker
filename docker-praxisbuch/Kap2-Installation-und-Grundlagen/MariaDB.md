@@ -74,7 +74,7 @@ Host Verzeichnis erstellen für das Volume:
 mkdir -p /home/xander/docker/varlibmysql
 ```
 
-Container erstellen und starten:
+MariaDB Container erstellen und starten:
 
 ```
 docker run -d --name mariadb-test2 \
@@ -117,7 +117,7 @@ show databases;
 
 ## Beispiel 3 - Mit Port-Weiterleitung
 
-Container erstellen und starten:
+MariaDB Container erstellen und starten:
 
 ```
 docker run -d --name mariadb-test3 \
@@ -145,7 +145,7 @@ Docker-Netzwerk erstellen mit Namen `test-net`:
 docker network create test-net
 ```
 
-Container erstellen, welcher das Netzwerk `test-net` verwendet:
+MariaDB Container erstellen, welcher das Netzwerk `test-net` verwendet:
 
 ``` 
 docker run -d --name mariadb-test4 \
@@ -168,3 +168,33 @@ docker run -d --name pma \
 Nun den Browser starten und auf `http://localhost:8080/` gehen.
 
 Mit `docker ps` sehen wir nun, dass zwei Container gleichzeitig laufen.
+
+Alle Container stoppen:
+
+``` 
+docker stop pma mariadb-test4
+```
+
+## Beispiel 5 - WordPress installieren
+
+MariaDB Container erstellen, welcher das Netzwerk `test-net` verwendet:
+
+``` 
+docker run -d --name mariadb-test5 \
+    --network test-net \
+    -v /home/xander/docker/varlibmysql/:/var/lib/mysql \
+    mariadb
+
+```
+
+WordPress Container erstellen und starten:
+
+``` 
+docker run -d --name wp-test1 \
+    -p 8080:80 \
+    --network test-net \
+    -v /home/xander/docker/wp-html:/var/html \
+    -e WORDPRESS_DB_PASSWORD=geheim \
+    -e WORDPRESS_DB_HOST=mariadb-test5 \
+    wordpress
+```
