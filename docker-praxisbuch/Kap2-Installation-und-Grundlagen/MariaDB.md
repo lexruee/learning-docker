@@ -193,7 +193,7 @@ WordPress Container erstellen und starten:
 docker run -d --name wp-test1 \
     -p 8080:80 \
     --network test-net \
-    -v /home/xander/docker/wp-html:/var/html \
+    -v /home/xander/docker/wp-html:/var/www/html \
     -e WORDPRESS_DB_PASSWORD=geheim \
     -e WORDPRESS_DB_HOST=mariadb-test5 \
     wordpress
