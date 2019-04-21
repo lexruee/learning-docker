@@ -136,3 +136,35 @@ mysql -u root -p --port 13306 --protocol tcp
 ``` 
 show databases;
 ```
+
+## Beispiel 4 - Mit Docker-Netzwerk
+
+Docker-Netzwerk erstellen mit Namen `test-net`:
+
+``` 
+docker network create test-net
+```
+
+Container erstellen, welcher das Netzwerk `test-net` verwendet:
+
+``` 
+docker run -d --name mariadb-test4 \
+    --network test-net \
+    -v /home/xander/docker/varlibmysql/:/var/lib/mysql \
+    mariadb
+
+```
+
+Als PHPMyAdmin Container erstellen, welcher auch das Netzwerk `test-net` verwendet:
+
+``` 
+docker run -d --name pma \
+    -p 8080:80 \
+    --network test-net \
+    -e PMA_HOST=mariadb-test4 \
+    phpmyadmin/phpmyadmin
+```
+
+Nun den Browser starten und auf `http://localhost:8080/` gehen.
+
+Mit `docker ps` sehen wir nun, dass zwei Container gleichzeitig laufen.
