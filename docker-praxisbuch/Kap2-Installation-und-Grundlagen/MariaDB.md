@@ -114,3 +114,25 @@ docker exec -it mariadb-test2 mysql -u root -p
 ``` 
 show databases;
 ```
+
+## Beispiel 3 - Mit Port-Weiterleitung
+
+Container erstellen und starten:
+
+```
+docker run -d --name mariadb-test3 \
+    -e MYSQL_ROOT_PASSWORD=geheim \
+    -v /home/xander/docker/varlibmysql:/var/lib/mysql \
+    -p 13306:3306 \
+    mariadb
+```
+
+Host Port ist 13306.
+
+``` 
+mysql -u root -p --port 13306 --protocol tcp
+```
+
+``` 
+show databases;
+```
