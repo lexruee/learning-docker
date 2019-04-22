@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    db:
+        image: mariadb:latest
+        volumes:
+            - /home/xander/docker/var/dc-test-db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: geheim
+        restart: always
+
+    wordpress:
+        image: wordpress:latest
+        volumes:
+            - /home/xander/docker/var/dc-test-www:/var/www/html
+        ports:
+            - "8090:80"
+        environment:
+            WORDPRESS_DB_HOST: db:3306
+            WORDPRESS_DB_PASSWORD: geheim
+        restart: always
