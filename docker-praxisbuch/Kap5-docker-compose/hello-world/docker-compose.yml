@@ -4,7 +4,7 @@ services:
     db:
         image: mariadb:latest
         volumes:
-            - /var/dc-test-db:/var/lib/mysql
+            - /home/xander/docker/var/dc-test-db:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: geheim
         restart: always
@@ -12,7 +12,7 @@ services:
     wordpress:
         image: wordpress:latest
         volumes:
-            - /var/dc-test-www:/var/www/html
+            - /home/xander/docker/var/dc-test-www:/var/www/html
         ports:
             - "8082:80"
         environment:
