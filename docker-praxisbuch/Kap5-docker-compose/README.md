@@ -1,4 +1,4 @@
-# Docker compose
+# Docker compose - Grundlagen
 
 ## Installation von docker compose
 
