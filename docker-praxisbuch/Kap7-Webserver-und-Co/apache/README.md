@@ -22,3 +22,13 @@ docker run -it -p 8080:80 -d --rm --name apache-test apache-alpine
 docker ps
 docker stop apache-test
 ```
+
+## Beispiel: Mit Debian Stretch und eigenem Dockerfile
+
+``` 
+cd apache-debian
+docker build -t apache-debian .
+docker run -it -p 8080:80 --name apache-debian-test --rm -d apache-debian
+docker ps
+docker stop apache-debian-test
+```
