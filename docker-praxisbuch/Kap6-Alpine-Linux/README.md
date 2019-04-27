@@ -17,7 +17,7 @@ docker run -it -h alpine --name alpine alpine
 ## Pakerverwaltung mit apk
 
 | Command            |    Beschreibung                                   |
-|:------------------:|:-------------------------------------------------:|
+|:-------------------|:--------------------------------------------------|
 | apk add <pkg>      | Installiert das Paket <pkg>                       |
 | apk del <pkg>      | Entfernt  das Paket <pkg>                         |
 | apk info           | Listet die installierten Pakete auf               |
