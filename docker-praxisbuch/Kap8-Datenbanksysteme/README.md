@@ -2,6 +2,12 @@
 
 ## MariaDB
 
+Image downloaden:
+
+``` 
+docker pull mariadb:latest
+```
+
 ### Beispiel 1: mysql shell starten
 
 ``` 
@@ -18,6 +24,12 @@ docker run --name mariadb-test --rm -d -e MYSQL_ROOT_PASSWORD=geheim \
 ```
 
 ## Postgres
+
+Image downloaden:
+
+``` 
+docker pull postgres:latest
+```
 
 ### Beispiel 1: psql shell starten
 
