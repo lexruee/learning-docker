@@ -1,4 +1,4 @@
-# Ubuntu 18.04 - Beispiel Dockerfile
+# Ubuntu 18.04 Nginx - Beispiel Dockerfile
 
 ## Building
 
