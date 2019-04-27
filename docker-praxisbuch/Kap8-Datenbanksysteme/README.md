@@ -9,6 +9,14 @@ docker run --name mariadb-test --rm -d -e MYSQL_ROOT_PASSWORD=geheim mariadb:lat
 docker exec -it mariadb-test musql -u root -p
 ```
 
+### Beispel 2: mit eigenem Volume
+
+``` 
+mkdir mariadb_volume
+docker run --name mariadb-test --rm -d -e MYSQL_ROOT_PASSWORD=geheim \
+    -v $(pwd)/mariadb_volume:/var/lib/mysql mariadb:latest 
+```
+
 ## Postgres
 
 ### Beispiel 1: psql shell starten
